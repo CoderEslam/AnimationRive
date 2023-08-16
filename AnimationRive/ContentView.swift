@@ -6,16 +6,96 @@
 //
 
 import SwiftUI
+import RiveRuntime
 
 struct ContentView: View {
+        
+    @AppStorage("selectedTab") var selectedTab: Tabs = .chat
+    @State var isOpen : Bool = false
+    @State var show : Bool = false
+    let button  = RiveViewModel(fileName: "menu_button" ,
+                                stateMachineName: "State Machine" ,
+                                autoPlay: false)
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        ZStack{
+            
+            Color("Background 2")
+                .ignoresSafeArea()
+            
+            SideMenu()
+                .opacity(isOpen ? 1 : 0)
+                .offset(x : isOpen ? 0 : -300)
+                .rotation3DEffect(.degrees(isOpen ? 0 : 30), axis: (x: 0, y: 1, z: 0))
+            
+            Group{
+                switch selectedTab {
+                    
+                case .chat:
+                    HomeView()
+                case .search:
+                    Text("")
+                case .timer:
+                    Text("Timer")
+                case .bell:
+                    Text("Bell")
+                case .user:
+                    Text("User")
+                    
+                }
+            }.safeAreaInset(edge: .bottom){
+                Color.clear.frame(height: 50)
+            }
+            .safeAreaInset(edge: .top){
+                Color.clear.frame(height: 104)
+            }
+            .mask(RoundedRectangle(cornerRadius: 30,style: .continuous))
+            .rotation3DEffect(.degrees(isOpen ? 30 : 0), axis: (x: 0, y: -1, z: 0))
+            .offset(x: isOpen ? 200 : 0)
+            .scaleEffect(isOpen ? 0.9 : 1)
+            .ignoresSafeArea()
+            
+            Image(systemName: "person")
+                .frame(width: 36,height: 36)
+                .background(.white)
+                .mask(Circle())
+                .shadow(color: Color("Shadow").opacity(0.2), radius: 5 ,x: 0,y: 5)
+                .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .topTrailing)
+                .padding()
+                .offset(y:4)
+                .offset(x: isOpen ? 100 : 0)
+                .onTapGesture {
+                    withAnimation(.spring()){
+                        show = true
+                    }
+                }
+            button.view()
+                .frame(width: 44,height: 44) // to dimantions
+                .mask(Circle()) // to put mask on shap
+                .shadow(color: .blue, radius: 20, x:0,y:10)
+                .frame(maxWidth: .infinity , maxHeight : .infinity , alignment : .topLeading)
+                .padding()
+                .offset(x:isOpen ? 180 : 0)
+                .onTapGesture {
+                button.setInput("isOpen", value: isOpen)
+                    withAnimation(.spring(response: 0.5,dampingFraction: 0.7)){
+                        isOpen.toggle()
+                    }
+            }
+            
+            TabBar()
+                .offset(y : isOpen ? 300 : 0 )
+            if show {
+                OnBordongView()
+                    .background(.white)
+                    .mask(RoundedRectangle(cornerRadius: 30,style: .continuous))
+                    .shadow(color: .black.opacity(0.5), radius: 40,x: 0,y: 40)
+                    .ignoresSafeArea(.all,edges: .top)
+                    .transition(.move(edge: .top))
+                    .zIndex(-1)
+            }
         }
-        .padding()
     }
 }
 
