@@ -29,6 +29,7 @@
 		AA2C636D2A8962FB00842241 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2C636C2A8962FB00842241 /* CustomFont.swift */; };
 		AA2C636F2A8973E600842241 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2C636E2A8973E600842241 /* SignInView.swift */; };
 		AA2C63712A89808800842241 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2C63702A89808800842241 /* CustomTextField.swift */; };
+		AA4013352C02025E007FCAE2 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4013342C02025E007FCAE2 /* Flags.swift */; };
 		AAB4C55C2A8A54E600E0B3E9 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4C55B2A8A54E600E0B3E9 /* Extentions.swift */; };
 		AAB4C5602A8B63EA00E0B3E9 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4C55F2A8B63EA00E0B3E9 /* TabBar.swift */; };
 		AABCD32D2A8D35F600C70FED /* CourseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCD32B2A8D35F600C70FED /* CourseSection.swift */; };
@@ -83,6 +84,7 @@
 		AA2C636C2A8962FB00842241 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		AA2C636E2A8973E600842241 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		AA2C63702A89808800842241 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		AA4013342C02025E007FCAE2 /* Flags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
 		AAB4C55B2A8A54E600E0B3E9 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		AAB4C55F2A8B63EA00E0B3E9 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		AABCD32B2A8D35F600C70FED /* CourseSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSection.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				AABCD3332A8D40EB00C70FED /* HomeView.swift */,
 				AABCD3352A8D449800C70FED /* SideMenu.swift */,
 				AABCD3372A8D547100C70FED /* MenuRow.swift */,
+				AA4013342C02025E007FCAE2 /* Flags.swift */,
 			);
 			path = AnimationRive;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				AABCD3322A8D3FB000C70FED /* HCard.swift in Sources */,
 				AA2C63632A89558700842241 /* OnBordongView.swift in Sources */,
 				AABCD3342A8D40EB00C70FED /* HomeView.swift in Sources */,
+				AA4013352C02025E007FCAE2 /* Flags.swift in Sources */,
 				AABCD3362A8D449800C70FED /* SideMenu.swift in Sources */,
 				AA2C636D2A8962FB00842241 /* CustomFont.swift in Sources */,
 				AABCD32E2A8D35F600C70FED /* Course.swift in Sources */,
